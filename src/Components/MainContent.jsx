@@ -13,7 +13,7 @@ function MainContent({
   setErrors,
 }) {
   return (
-    <main className="flex-1 bg-white h-full">
+    <main className="flex-1 h-full">
       <div className="font-mono h-full py-[6%] px-[12%]">
         {activeStep === 1 && (
           <Step1

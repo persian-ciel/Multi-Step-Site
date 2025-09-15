@@ -9,7 +9,7 @@ function Sidebar({ activeStep, onStepClick }) {
   ];
 
   return (
-    <div className="w-[30%] pt-[4%] rounded-2xl h-full flex-shrink-0 bg-[url(/images/bg-sidebar-desktop.svg)]">
+    <div className="w-[30%] pt-[4%] rounded-2xl h-full flex-shrink-0 bg-[url(/images/bg-sidebar-desktop.svg)] bg-cover">
       <div className="font-mono text-white">
         {steps.map((link) => (
           <div key={link.id} onClick={() => onStepClick(link.id)}>
