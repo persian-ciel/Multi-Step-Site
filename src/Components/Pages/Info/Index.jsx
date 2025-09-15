@@ -46,7 +46,7 @@ function Step1({ formData, setFormData, errors, setErrors, setActiveStep }) {
 
       <div>
         {inputList.map((link) => (
-          <div key={link.id} className="mt-3">
+          <div key={link.id} className="mt-3 2xl:mt-6">
             <div className="flex justify-between">
               <label className="ml-1 font-medium">{link.label}</label>
               {errors?.[link.name] && (
