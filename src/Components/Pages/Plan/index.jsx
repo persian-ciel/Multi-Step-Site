@@ -6,6 +6,7 @@ import PlanCard from "./PlanCard";
 import ArcadeImage from "/images/icon-arcade.svg";
 import AdvanceImage from "/images/icon-advanced.svg";
 import ProImage from "/images/icon-pro.svg";
+import RadioButton from "./RadioButton";
 
 function Step2({ setActiveStep }) {
   const list = [
@@ -28,6 +29,9 @@ function Step2({ setActiveStep }) {
           {list.map((card) => (
             <PlanCard key={card.id} image={card.img} name={card.title} price={card.curency} />
           ))}
+        </div>
+        <div className="">
+          <RadioButton />
         </div>
         <div className="absolute bottom-0 left-0">
           <GoBack />
