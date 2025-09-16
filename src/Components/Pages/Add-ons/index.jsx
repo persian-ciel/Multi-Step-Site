@@ -20,7 +20,7 @@ function Step3({ setActiveStep }) {
           text="Add-ons help enhance your gaming experience."
         />
       </div>
-        {list.map((chebox)=>(<CheckboxAddons title={chebox.top} description={chebox.des} price={chebox.per} />))}
+        {list.map((chebox)=>(<CheckboxAddons key={chebox.id} title={chebox.top} description={chebox.des} price={chebox.per} />))}
         <div className="absolute bottom-0 left-0">
           <GoBack />
         </div>

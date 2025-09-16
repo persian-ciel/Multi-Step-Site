@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import NextPage from "../../Common/ButtonNextPage";
 import PageTilte from "../../Common/PageTitle";
 import GoBack from "../../Common/ButtonGoBack";
@@ -9,10 +9,12 @@ import ProImage from "/images/icon-pro.svg";
 import RadioButton from "./RadioButton";
 
 function Step2({ setActiveStep }) {
+  const [isYearly, setIsYearly] = useState(false);
+
   const list = [
-    { id: 1, img: ArcadeImage, title: "Arcade", curency: "$9" },
-    { id: 2, img: AdvanceImage, title: "Advance", curency: "$12" },
-    { id: 3, img: ProImage, title: "Pro", curency: "$15" },
+    { id: 1, img: ArcadeImage, title: "Arcade", monthly: "$9", yearly: "$90" },
+    { id: 2, img: AdvanceImage, title: "Advance", monthly: "$12", yearly: "$120" },
+    { id: 3, img: ProImage, title: "Pro", monthly: "$15", yearly: "$150" },
   ];
 
   const goNext = () => setActiveStep((prev) => Math.min(prev + 1, 4));
@@ -25,13 +27,14 @@ function Step2({ setActiveStep }) {
             text="You have the option of monthly or yearly billing"
           />
         </div>
-        <div className="inline w-full ">
+        <div className=" w-full flex flex-wrap items-center justify-center gap-6 my-6">
           {list.map((card) => (
-            <PlanCard key={card.id} image={card.img} name={card.title} price={card.curency} />
+            <PlanCard key={card.id} image={card.img} name={card.title} price={isYearly ? card.yearly : card.monthly}
+            isYearly={isYearly} />
           ))}
         </div>
         <div className="">
-          <RadioButton />
+          <RadioButton isYearly={isYearly} setIsYearly={setIsYearly}/>
         </div>
         <div className="absolute bottom-0 left-0">
           <GoBack />
