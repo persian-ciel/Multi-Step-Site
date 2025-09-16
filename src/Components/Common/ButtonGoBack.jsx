@@ -5,7 +5,7 @@ function GoBack() {
     <>
       <button
         
-        className="text-neutral-4l00 font-semibold px-5 py-2 cursor-pointer"
+        className="text-neutral-400 font-semibold px-5 py-2 cursor-pointer"
       >
         Go Back
       </button>

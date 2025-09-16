@@ -9,7 +9,7 @@ function CheckboxAddons(props) {
 
   return (
     <div
-      className={`w-full rounded-lg hover:border-purple-800 outline-none cursor-pointer px-5 py-5 flex mb-4 border ${
+      className={`w-full rounded-lg hover:border-purple-800 outline-none cursor-pointer px-4 py-3 2xl:px-5 2xl:py-5 flex mb-4 border ${
         checked ? 'border-purple-800' : 'border-neutral-300'
       }`}
     >
@@ -24,9 +24,9 @@ function CheckboxAddons(props) {
         />
       </div>
       <div className='flex-1'>
-        <label className='font-semibold text-xl'>{props.title}</label>
+        <label className='font-semibold text-lg 2xl:text-xl'>{props.title}</label>
         <br />
-        <label className='font-sans text-neutral-400'>{props.description}</label>
+        <label className='font-sans 2xl:text-base text-sm text-neutral-400'>{props.description}</label>
       </div>
       <div className='flex items-center mr-3 text-purple-600'>+${props.price}</div>
     </div>
