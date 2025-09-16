@@ -1,15 +1,21 @@
 import React from "react";
 
-function NextPage({ onClick }) {
+function NextPage({ onClick, setActiveStep }) {
+  const handleClick = () => {
+    if (onClick) {
+      onClick(); // run custom validation handler
+    } else if (setActiveStep) {
+      setActiveStep((prev) => Math.min(prev + 1, 4));
+    }
+  };
+
   return (
-    <>
-      <button
-        onClick={onClick}
-        className="bg-blue-950 text-white px-5 py-2 rounded-lg cursor-pointer"
-      >
-        Next Step
-      </button>
-    </>
+    <button
+      onClick={handleClick}
+      className="bg-blue-950 text-white font-semibold px-5 py-2 rounded cursor-pointer"
+    >
+      Next Step
+    </button>
   );
 }
 
