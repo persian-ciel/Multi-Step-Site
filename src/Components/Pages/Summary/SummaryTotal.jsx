@@ -20,8 +20,8 @@ function SummaryTotal() {
   });
 
   return (
-    <div className="flex px-5 py-3">
-      <div className="flex-1 text-neutral-400">
+    <div className="flex px-5 py-3 font-sans 2xl:text-xl 2xl:py-5 2xl:px-7">
+      <div className="flex-1 text-neutral-400 ">
         Total (per {isYearly ? "year" : "month"})
       </div>
       <div className="flex font-bold text-blue-700 text-2xl">

@@ -13,9 +13,9 @@ function SummaryAddons() {
           ? `+$${addon.yearly}/yr`
           : `+$${addon.monthly}/mo`;
         return (
-          <div key={addon.id} className="flex px-5 py-3">
-            <div className="flex-1 text-neutral-400">{addon.name}</div>
-            <div className="flex text-neutral-400">{price}</div>
+          <div key={addon.id} className="flex px-5 py-3 2xl:py-5 2xl:px-7">
+            <div className="flex-1 text-neutral-500">{addon.name}</div>
+            <div className="flex text-neutral-500">{price}</div>
           </div>
         );
       })}

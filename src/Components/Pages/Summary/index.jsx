@@ -14,13 +14,13 @@ function Step4({ setActiveStep }) {
           titleName="Finishing up"
           text="Double-check everything looks OK before confirming."
         />
-        <div className="bg-neutral-100 rounded-sm font-sans">
+        <div className="bg-zinc-200 rounded-sm 2xl:rounded-lg font-sans">
           <SummaryPlan />
-          <hr />
+          <hr className="w-3/4 bg-neutral-300 text-neutral-300"/>
           <SummaryAddons />
         </div>
         <SummaryTotal />
-        <div className="absolute bottom-0 left-0">
+        <div className="absolute bottom-0 left-0 ">
         <GoBack setActiveStep={setActiveStep} />
       </div>
       <div className="absolute bottom-0 right-0">
