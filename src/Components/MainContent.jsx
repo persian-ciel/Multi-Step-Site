@@ -3,6 +3,8 @@ import Step1 from "./Pages/Info/Index";
 import Step2 from "./Pages/Plan/index";
 import Step3 from "./Pages/Add-ons/index";
 import Step4 from "./Pages/Summary/index";
+import ConfirmPage from "./Pages/Summary/ConfirmPage";
+
 
 function MainContent({
   activeStep,
@@ -27,6 +29,7 @@ function MainContent({
         {activeStep === 2 && <Step2 setActiveStep={setActiveStep} />}
         {activeStep === 3 && <Step3 setActiveStep={setActiveStep} />}
         {activeStep === 4 && <Step4 setActiveStep={setActiveStep} />}
+        {activeStep === "confirm" && <ConfirmPage />}
       </div>
     </main>
   );

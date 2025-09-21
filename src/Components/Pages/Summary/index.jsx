@@ -16,16 +16,16 @@ function Step4({ setActiveStep }) {
         />
         <div className="bg-zinc-200 rounded-sm 2xl:rounded-lg font-sans">
           <SummaryPlan />
-          <hr className="w-3/4 bg-neutral-300 text-neutral-300"/>
+          <hr className="w-3/4 bg-neutral-300 text-neutral-300" />
           <SummaryAddons />
         </div>
         <SummaryTotal />
         <div className="absolute bottom-0 left-0 ">
-        <GoBack setActiveStep={setActiveStep} />
-      </div>
-      <div className="absolute bottom-0 right-0">
-        <ConfirmButton/>
-      </div>
+          <GoBack setActiveStep={setActiveStep} />
+        </div>
+        <div className="absolute bottom-0 right-0">
+          <ConfirmButton onClick={() => setActiveStep("confirm")}/>
+        </div>
       </div>
     </>
   );
