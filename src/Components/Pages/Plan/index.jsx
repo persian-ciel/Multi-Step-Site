@@ -6,12 +6,13 @@ import PageTilte from "../../Common/PageTitle";
 import GoBack from "../../Common/ButtonGoBack";
 import PlanCard from "./PlanCard";
 import RadioButton from "./RadioButton";
-
+import useIsMobile from "../../../hooks/useIsMobile";
 import ArcadeImage from "/images/icon-arcade.svg";
 import AdvanceImage from "/images/icon-advanced.svg";
 import ProImage from "/images/icon-pro.svg";
 
 function Step2({ setActiveStep }) {
+  const isMobile = useIsMobile();
   const dispatch = useDispatch();
   const { isYearly, selectedPlan } = useSelector((state) => state.billing);
 
@@ -21,7 +22,32 @@ function Step2({ setActiveStep }) {
     { id: 3, img: ProImage, title: "Pro", monthly: "$15", yearly: "$150" },
   ];
 
-  return (
+  return isMobile ? (
+    <div className="relative h-full p-4">
+      <PageTilte
+        titleName="Select your plan"
+        text="You have the option of monthly or yearly billing"
+      />
+
+      <div className="w-full flex flex-wrap items-center justify-center gap-6 my-6">
+        {list.map((card) => (
+          <PlanCard
+            key={card.id}
+            image={card.img}
+            name={card.title}
+            price={isYearly ? card.yearly : card.monthly}
+            isYearly={isYearly}
+            isSelected={selectedPlan === card.id}
+            onSelect={() => dispatch(setSelectedPlan(card.id))}
+          />
+        ))}
+      </div>
+
+      <RadioButton />
+
+      
+    </div>
+  ) : (
     <div className="relative h-full">
       <PageTilte
         titleName="Select your plan"
