@@ -31,7 +31,7 @@ function CheckboxAddons({ id, title, description, price }) {
         </label>
       </div>
       <div className="flex items-center mr-3 text-purple-600">
-        +${price}
+        +{price}
         {isYearly ? "/yr" : "/mo"}
       </div>
     </div>

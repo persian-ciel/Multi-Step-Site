@@ -4,22 +4,32 @@ import CheckboxAddons from "./Checkbox";
 import NextPage from "../../Common/ButtonNextPage";
 import GoBack from "../../Common/ButtonGoBack";
 import useIsMobile from "../../../hooks/useIsMobile";
+import { useSelector } from "react-redux";
 
 function Step3({ setActiveStep }) {
   const isMobile = useIsMobile();
+  const { isYearly, selectedPlan } = useSelector((state) => state.billing);
   const list = [
     {
       id: 1,
       top: "Online service",
       des: "Access to multiplayer games",
-      per: 1,
+      monthly: "$1",
+      yearly: "$10",
     },
-    { id: 2, top: "Larger storage", des: "Extra 1TB of cloud save", per: 2 },
+    {
+      id: 2,
+      top: "Larger storage",
+      des: "Extra 1TB of cloud save",
+      monthly: "$2",
+      yearly: "$20",
+    },
     {
       id: 3,
       top: "Customizable profile",
       des: "Custom theme on your profile",
-      per: 2,
+      monthly: "$2",
+      yearly: "$20",
     },
   ];
 
@@ -36,11 +46,9 @@ function Step3({ setActiveStep }) {
           id={chebox.id}
           title={chebox.top}
           description={chebox.des}
-          price={chebox.per}
-         />
+          price={isYearly ? chebox.yearly : chebox.monthly}
+        />
       ))}
-
-      
     </div>
   ) : (
     <div className="relative h-full">
@@ -55,7 +63,7 @@ function Step3({ setActiveStep }) {
           id={chebox.id}
           title={chebox.top}
           description={chebox.des}
-          price={chebox.per}
+          price={isYearly ? chebox.yearly : chebox.monthly}
         />
       ))}
 
