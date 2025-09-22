@@ -51,6 +51,11 @@ This launches the development server with HMR at http://localhost:5173 (default)
 
 ### Demo
 
+<img width="1366" height="595" alt="Screenshot (22)" src="https://github.com/user-attachments/assets/663b366c-ab02-4cea-b769-d655d8b1ccd0" />
+<img width="1366" height="597" alt="Screenshot (25)" src="https://github.com/user-attachments/assets/c8a72be3-9f8b-4a94-bd70-16cab3d25271" />
+
+## Preview
+you can check the site on https://multi-step-site.vercel.app/
 ### 🧰 Technologies Used
 
 - **Frontend**: React, Vite, Tailwind CSS
